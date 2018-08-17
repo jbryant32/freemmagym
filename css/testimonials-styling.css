@@ -64,7 +64,7 @@ section {
 }
 
 .testimonials {
- background-image: url(../images/boxing-exercise-female-160920.jpg);
+ background-image: url(../images/boxing-exercise-female-desktop.png);
  height: auto;
  background-repeat: no-repeat;
  margin-top: -20px;
@@ -102,7 +102,10 @@ blockquote p {
 
 @media only screen 
 and (max-width: 480px) {
-  
+  .testimonials {
+    background-image: url(../images/boxing-exercise-female-mobile.png);
+   }
+   
   .testimonials h4 {
     font-size: 35px;
     padding-left: 10px;
@@ -138,7 +141,9 @@ and (max-width: 480px) {
 @media only screen 
 and (min-width: 480px) 
 and (max-width: 1024px) {
-
+  .testimonials {
+    background-image: url(../images/boxing-exercise-female-desktop.png);
+   }
   blockquote p {
     font-family: 'Montserrat', sans-serif;
     font-size: 19px;
@@ -159,7 +164,9 @@ and (max-width: 1024px) {
 
 @media only screen 
 and (min-width: 1824px) {
-
+  .testimonials {
+    background-image: url(../images/boxing-exercise-female-160920.jpg);
+   }
   .testimonial-head h4 {
     padding-bottom: 30px;
     padding-top: 30px;

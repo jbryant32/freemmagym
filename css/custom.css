@@ -1,0 +1,113 @@
+.features-img-container {
+  width: 40%;
+  height: 400px;
+  overflow: hidden;
+  background-color: gray;
+}
+.features-img-container img {
+  width: 100%;
+}
+.features-container {
+}
+
+.features-container > div {
+  float: left;
+  margin: auto;
+}
+.features-text {
+  width: 60%;
+  height: 100%;
+  padding: 10px;
+  line-height: 30px;
+}
+.servicesheader {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  background-color: #4e686b;
+  margin-bottom: 80px;
+}
+.services-blockitems-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.services-blockitem {
+  width: 35%;
+}
+.services-blockitem img {
+  width: 100%;
+  height: 100%;
+}
+.services-blockitem > div:nth-of-type(1) {
+  width: 25%;
+  /* float: left; */
+  display: inline-block;
+  vertical-align: top;
+}
+.services-blockitem > div:nth-of-type(2) {
+  width: 70%;
+  /* float: left; */
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  padding-left: 10px;
+}
+.services-container {
+  margin-bottom: 80px;
+ 
+
+}
+.meet-us-container{}
+.meet-us-header{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    background-color: #4e686b;
+    margin-bottom: 80px;
+}
+.meet-us-profiles-container{}
+.profile-item{}
+.profile-img-circle{
+    border: 2px solid grey;
+
+}
+/* portait  */
+@media screen and (max-width: 500px) {
+  .features-img-container {
+    display: none;
+  }
+  .features-text {
+    width: 100%;
+    height: 100%;
+  }
+  
+}
+@media only screen 
+and (max-width: 900px){
+    .services-blockitem {
+        width: 80%;
+      }
+      .services-blockitem > div:nth-of-type(1) {
+        width: 25%;
+        /* float: left; */
+        display: inline-block;
+        vertical-align: top;
+        padding: 20px;
+      }
+      .services-blockitem > div:nth-of-type(2) {
+        width: 70%;
+        /* float: left; */
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        /* padding-left: 10px; */
+        padding: 20px 20px 20px 10px;
+      }
+      .services-blockitems-container {
+        width: 90%;
+        margin: auto;
+        display: block;
+      }
+}
