@@ -36,7 +36,7 @@
 	margin-top: -25px;
 }
 .introtext h1 {
-	color: #77A29F;
+	color: #f65339;
 	font-weight: bold;
 	font-family: 'Montserrat', sans-serif;
 	padding-bottom: 40px;
@@ -69,8 +69,7 @@ hr {
 	width: 70%;
 }
 .videoheader {
-	margin-top: -20px;
-	background-color: #4E686B;
+
 	height: auto !important;
 }
 .videoheader h2 {
