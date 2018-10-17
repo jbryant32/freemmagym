@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FreeMMA Donation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/donation.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script src="js/bootstrap.js" type="script"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <button id="customButton">Pay With Card</button>
+        <form action="/sendpayment" method="POST">
+            <!-- <script id="checkout" src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_2IjZUi5RLXunURckJHSFqx7v"
+                data-amount="2000" data-name="FreeMMA Gym" data-description="Donation" data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-zip-code="" data-locale="auto">
+                </script> -->
+            <script src="https://checkout.stripe.com/checkout.js"></script>
+
+            <script>
+                var handler = StripeCheckout.configure({
+                    key: 'pk_test_2IjZUi5RLXunURckJHSFqx7v',
+                    image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+                    locale: 'auto',
+                    token: function (token) {
+                        // You can access the token ID with `token.id`.
+                        // Get the token ID to your server-side code for use.
+                    }
+                });
+
+                document.getElementById('customButton').addEventListener('click', function (e) {
+                    // Open Checkout with further options:
+                    handler.open({
+                        name: 'FreeMMA Gym',
+                        description: 'Non-profit Organization',
+                        amount: 2000
+                    });
+                    e.preventDefault();
+                });
+
+                // Close Checkout on page navigation:
+                window.addEventListener('popstate', function () {
+                    handler.close();
+                });
+            </script>
+        </form>
+
+
+
+    </div>
+
+    <!-- <div class="main">
+        <form class="dontaion-form form-group-lg" id="payment-submission" method="POST" action="/sendpayment">
+            <fieldset>
+                <div class="row">
+                    <label class="control-label">Enter Donation Amount</label>
+                    <div class="control-group">
+                        <input min="0.01" step="0.01" type="number" value="1.00" required placeholder="Amount" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card-types-container">
+                        <i class="fab fa-cc-visa" style="color:navy;"></i>
+                        <i class="fab fa-cc-amex" style="color:blue;"></i>
+                        <i class="fab fa-cc-mastercard" style="color:red;"></i>
+                        <i class="fab fa-cc-discover" style="color:orange;"></i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group">
+                        <label class="control-label">Full Name</label>
+                        <input id="name" name="name" type="text" required placeholder="John Doe" class="form-control" />
+                        <label class="control-label">Email</label>
+                        <input id="email" name="email" type="text" required placeholder="John.Doe@Email.Com" class="form-control" />
+                        <label class="control-label">Address</label>
+                        <input id="address" email="address" type="text" required placeholder="542 W. 15th Street" class="form-control" />
+                        <label class="control-label">City</label>
+                        <input id="city" name="city" type="text" required placeholder="Palm Desert" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="control-group" style="display:flex">
+                        <div style="margin: 0px 10px 0px 0px; width: 100%;">
+                            <label class="control-label">State</label>
+                            <input id="state" name="state" class="form-control" type="text" placeholder="CA" maxlength="2"
+                                minlength="2" required />
+                        </div>
+                        <div style="margin: 0px 0px 0px 10px;width: 100%;">
+                            <label class="control-label">Zip Code</label>
+                            <input id="zip" name="zip" class="form-control" type="number" placeholder="92262" maxlength="5"
+                                minlength="5" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group">
+                        <label class="control-label"> Credit Card Number</label>
+                        <input id="credit-card-numer" name="creditCard" type="number" placeholder="1111-2223-3345-5666"
+                            class="form-control" required />
+                        <label class="control-label">Exp Month</label>
+                        <input id="month" name="month" placeholder="March" class="form-control" type="text" required />
+                    </div>
+                    <div class="control-group" style="display:flex">
+                        <div style="margin: 0px 10px 0px 0px; width: 100%;">
+                            <label class="control-label">Exp Year</label>
+                            <input class="form-control" id="year" name="year" type="number" placeholder="2023"
+                                maxlength="4" minlength="4" required />
+                        </div>
+                        <div style="margin: 0px 0px 0px 10px;width: 100%;">
+                            <label class="control-label">CVC</label>
+                            <input id="cvc" name="cvc" class="form-control" type="number" placeholder="123" maxlength="5"
+                                required />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <input type="submit" class=" btn btn-primary" value="Donate" />
+        </form>
+    </div> -->
+</body>
+
+
+<script>
+    $('#payment-submission').on('submit', function () {
+        var This = $(this);
+        console.log(This);
+        if ($(This).valid()) { console.log("form valid") }
+        else { console.log("form invalid"); }
+    });
+    $('#payment-submission').validate({
+        onfocusout: function (element) {
+            $(element).valid();
+        },
+        rules: {
+            name: { required: true },
+            email: { required: true, email: true },
+            address: { required: true, address: true },
+            city: { required: true },
+            state: { required: true },
+            zip: { required: true },
+            creditCard: { required: true },
+            month: { required: true },
+            year: { required: true },
+            cvc: { required: true },
+        },
+        submitHanlder: (form) => { form.submit(); }
+    });
+</script>
+
+</html>
